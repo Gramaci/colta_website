@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colta — Open in App</title>
+    <meta name="theme-color" content="#F5F1EA" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1C1A17" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:title" content="Check out this profile on Colta">
+    <meta property="og:description" content="Colta is a social journal for your cultural life. Track books, movies, theatre, exhibitions, and concerts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getcolta.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <style>
+        :root {
+            --bg: #F5F1EA;
+            --text-primary: #1E1E1E;
+            --text-secondary: #6F6A63;
+            --accent: #B76A4C;
+            --accent-dark: #8E4A30;
+            --action-text: #FAFAF7;
+            --radius-md: 12px;
+            --radius-full: 9999px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1C1A17;
+                --text-primary: #F5F1EA;
+                --text-secondary: #9C958B;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .card {
+            text-align: center;
+            max-width: 380px;
+            width: 100%;
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-md);
+            margin: 0 auto 24px;
+        }
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--action-text);
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 14px 32px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: var(--accent-dark); }
+        .secondary-link {
+            display: block;
+            margin-top: 16px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            text-decoration: none;
+        }
+        .secondary-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img class="icon" src="/appicon.png" alt="Colta">
+        <h1>View this profile on Colta</h1>
+        <p>Colta is a social journal for your cultural life. Download the app to see this profile.</p>
+        <a class="btn" id="store-link" href="https://getcolta.com">Download Colta</a>
+        <a class="secondary-link" href="https://getcolta.com">Back to getcolta.com</a>
+    </div>
+
+    <script>
+        (function() {
+            var ua = navigator.userAgent || '';
+            var link = document.getElementById('store-link');
+            if (/iPhone|iPad|iPod/i.test(ua)) {
+                link.href = 'https://apps.apple.com/app/colta/id6759000296';
+                link.textContent = 'Open in App Store';
+            } else if (/Android/i.test(ua)) {
+                link.href = 'https://play.google.com/store/apps/details?id=com.colta.app';
+                link.textContent = 'Open in Play Store';
+            }
+        })();
+    </script>
+</body>
+</html>
