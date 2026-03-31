@@ -4,7 +4,7 @@
     "target": {
       "namespace": "android_app",
       "package_name": "com.colta.app",
-      "sha256_cert_fingerprints": ["TODO_REPLACE_WITH_YOUR_SIGNING_KEY_SHA256"]
+      "sha256_cert_fingerprints": ["DA:19:FD:85:68:C8:DF:07:31:14:38:A0:89:DA:73:F1:26:52:EC:CA:EF:77:17:89:72:AD:57:C1:75:88:C9:46"]
     }
   }
 ]
