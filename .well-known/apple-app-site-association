@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "DP292QS5C6.com.logg.app",
+        "paths": ["/profile/*"]
+      }
+    ]
+  }
+}
