@@ -69,10 +69,16 @@
                 <span class="activity-pill book">&#128214; Livres</span>
             </div>
 
-            <!-- App Store badge -->
-            <a href="https://apps.apple.com/fr/app/colta/id6759000296?l=en-GB" class="app-store-badge" aria-label="Download on the App Store">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-            </a>
+            <!-- Store badges -->
+            <div class="store-badges">
+                <a href="https://apps.apple.com/fr/app/colta/id6759000296?l=en-GB" class="app-store-badge" aria-label="Download on the App Store">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                </a>
+                <button class="google-play-badge" onclick="openBetaModal()" aria-label="Get it on Google Play">
+                    <img class="en-only" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                    <img class="fr-only" src="https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png" alt="Disponible sur Google Play">
+                </button>
+            </div>
         </div>
     </section>
 
@@ -240,9 +246,15 @@
         <div class="cta-card">
             <h2><span class="en-only">Start your cultural journal</span><span class="fr-only">Commencez votre journal culturel</span></h2>
             <p><span class="en-only">Join Colta and never forget the things that move you.</span><span class="fr-only">Rejoignez Colta et n'oubliez plus jamais ce qui vous touche.</span></p>
-            <a href="https://apps.apple.com/fr/app/colta/id6759000296?l=en-GB" class="app-store-badge" aria-label="Download on the App Store">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-            </a>
+            <div class="store-badges">
+                <a href="https://apps.apple.com/fr/app/colta/id6759000296?l=en-GB" class="app-store-badge" aria-label="Download on the App Store">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                </a>
+                <button class="google-play-badge" onclick="openBetaModal()" aria-label="Get it on Google Play">
+                    <img class="en-only" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                    <img class="fr-only" src="https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png" alt="Disponible sur Google Play">
+                </button>
+            </div>
         </div>
     </section>
 
@@ -258,6 +270,95 @@
         </div>
     </footer>
 
+    <!-- Android Beta Modal -->
+    <div class="beta-modal-overlay" id="betaModal" onclick="closeBetaModal(event)">
+        <div class="beta-modal">
+            <button class="beta-modal-close" onclick="closeBetaModal()" aria-label="Close">&times;</button>
+            <div class="beta-modal-icon">&#129302;</div>
+            <h3 class="en-only">Join the Android Beta</h3>
+            <h3 class="fr-only">Rejoignez la bêta Android</h3>
+            <p class="en-only">Colta for Android is currently in closed beta. Enter your email and we'll send you an invite to test the app.</p>
+            <p class="fr-only">Colta pour Android est en bêta fermée. Entrez votre email et nous vous enverrons une invitation pour tester l'application.</p>
+            <form id="betaForm" onsubmit="submitBetaForm(event)">
+                <input type="email" name="email" id="betaEmail" required autocomplete="email"
+                    placeholder="your@email.com">
+                <input type="hidden" name="_subject" value="New Android Beta Tester Request">
+                <input type="hidden" name="_template" value="table">
+                <button type="submit" id="betaSubmitBtn">
+                    <span class="en-only">Request Access</span>
+                    <span class="fr-only">Demander l'accès</span>
+                </button>
+            </form>
+            <div class="beta-modal-success" id="betaSuccess" style="display:none;">
+                <div class="success-icon">&#10003;</div>
+                <p class="en-only">Thanks! We'll send you an invite soon.</p>
+                <p class="fr-only">Merci ! Nous vous enverrons une invitation bientôt.</p>
+            </div>
+            <div class="beta-modal-error" id="betaError" style="display:none;">
+                <p class="en-only">Something went wrong. Please email us at <a href="mailto:support@getcolta.com">support@getcolta.com</a>.</p>
+                <p class="fr-only">Une erreur est survenue. Contactez-nous à <a href="mailto:support@getcolta.com">support@getcolta.com</a>.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="lang.js"></script>
+    <script>
+    function openBetaModal() {
+        document.getElementById('betaModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(function() {
+            document.getElementById('betaEmail').focus();
+        }, 300);
+    }
+
+    function closeBetaModal(e) {
+        if (e && e.target !== e.currentTarget) return;
+        document.getElementById('betaModal').classList.remove('active');
+        document.body.style.overflow = '';
+        document.getElementById('betaForm').style.display = '';
+        document.getElementById('betaSuccess').style.display = 'none';
+        document.getElementById('betaError').style.display = 'none';
+        document.getElementById('betaForm').reset();
+        document.getElementById('betaSubmitBtn').disabled = false;
+        document.getElementById('betaSubmitBtn').classList.remove('loading');
+    }
+
+    function submitBetaForm(e) {
+        e.preventDefault();
+        var btn = document.getElementById('betaSubmitBtn');
+        var email = document.getElementById('betaEmail').value;
+        btn.disabled = true;
+        btn.classList.add('loading');
+
+        fetch('https://formsubmit.co/ajax/support@getcolta.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                email: email,
+                _subject: 'New Android Beta Tester Request'
+            })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+            if (data.success) {
+                document.getElementById('betaForm').style.display = 'none';
+                document.getElementById('betaSuccess').style.display = 'block';
+            } else {
+                document.getElementById('betaError').style.display = 'block';
+                btn.disabled = false;
+                btn.classList.remove('loading');
+            }
+        })
+        .catch(function() {
+            document.getElementById('betaError').style.display = 'block';
+            btn.disabled = false;
+            btn.classList.remove('loading');
+        });
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeBetaModal();
+    });
+    </script>
 </body>
 </html>

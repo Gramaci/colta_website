@@ -288,6 +288,15 @@ nav .nav-links a.active {
 .activity-pill.exhibition { background: var(--color-exhibition); }
 .activity-pill.concert { background: var(--color-concert); color: #1E1E1E; }
 
+/* Store badges wrapper */
+.store-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
 .hero .app-store-badge {
     display: inline-block;
     transition: transform 0.2s ease;
@@ -299,6 +308,24 @@ nav .nav-links a.active {
 
 .hero .app-store-badge img {
     height: 54px;
+}
+
+.google-play-badge {
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.google-play-badge:hover {
+    transform: scale(1.05);
+}
+
+.google-play-badge img {
+    height: 80px;
+    margin: -13px -16px;
 }
 
 .coming-soon-badge {
@@ -566,6 +593,14 @@ nav .nav-links a.active {
     color: var(--text-secondary);
     margin-bottom: var(--space-xl);
     line-height: 1.5;
+}
+
+.cta-card .store-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
 }
 
 .cta-card .app-store-badge {
@@ -910,6 +945,223 @@ footer .copyright {
     .lang-toggle {
         margin-left: auto;
         margin-right: var(--space-sm);
+    }
+}
+
+/* ---- Beta Modal ---- */
+
+.beta-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.beta-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.beta-modal {
+    background: var(--bg);
+    border: 1px solid var(--divider);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xxl) var(--space-xl);
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.25s ease;
+}
+
+.beta-modal-overlay.active .beta-modal {
+    transform: translateY(0) scale(1);
+}
+
+.beta-modal-close {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.beta-modal-close:hover {
+    background: var(--bg-surface);
+    color: var(--text-primary);
+}
+
+.beta-modal-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-md);
+}
+
+.beta-modal h3 {
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.3px;
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+.beta-modal > p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+}
+
+.beta-modal form {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.beta-modal form input[type="email"] {
+    flex: 1;
+    padding: 14px 16px;
+    border: 1px solid var(--divider);
+    border-radius: var(--radius-md);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.beta-modal form input[type="email"]:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(183, 106, 76, 0.15);
+}
+
+.beta-modal form input[type="email"]::placeholder {
+    color: var(--text-tertiary);
+}
+
+.beta-modal form button[type="submit"] {
+    padding: 14px 24px;
+    background: var(--action);
+    color: var(--action-text);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.beta-modal form button[type="submit"]:hover:not(:disabled) {
+    opacity: 0.85;
+    transform: scale(1.02);
+}
+
+.beta-modal form button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.beta-modal form button[type="submit"].loading {
+    position: relative;
+    color: transparent;
+}
+
+.beta-modal form button[type="submit"].loading::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--action-text);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.beta-modal-success {
+    padding: var(--space-md) 0;
+}
+
+.beta-modal-success .success-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #7FB77E;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+}
+
+.beta-modal-success p {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.beta-modal-error {
+    margin-top: var(--space-md);
+}
+
+.beta-modal-error p {
+    font-size: 14px;
+    color: #D65A8F;
+}
+
+.beta-modal-error a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.beta-modal-error a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .beta-modal {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .beta-modal form {
+        flex-direction: column;
+    }
+
+    .beta-modal form button[type="submit"] {
+        padding: 14px;
     }
 }
 
