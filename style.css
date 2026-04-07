@@ -320,7 +320,7 @@ nav .nav-links a.active {
     border: none;
     padding: 0;
     cursor: pointer;
-    overflow: visible;
+    overflow: hidden;
     transition: transform 0.2s ease;
 }
 
@@ -330,7 +330,7 @@ nav .nav-links a.active {
 
 .google-play-badge img {
     height: 79px;
-    margin: -12.5px -15px;
+    margin: 0 -15px;
 }
 
 .coming-soon-badge {
