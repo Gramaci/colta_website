@@ -21,19 +21,34 @@
     <style>
         :root {
             --bg: #F5F1EA;
+            --bg-surface: #E8E3DA;
+            --bg-input: rgba(255, 255, 255, 0.50);
             --text-primary: #1E1E1E;
             --text-secondary: #6F6A63;
+            --text-tertiary: rgba(30, 30, 30, 0.50);
             --accent: #B76A4C;
             --accent-dark: #8E4A30;
+            --action: #1E1E1E;
             --action-text: #FAFAF7;
+            --divider: rgba(0, 0, 0, 0.08);
+            --radius-sm: 8px;
             --radius-md: 12px;
+            --radius-lg: 16px;
             --radius-full: 9999px;
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.10);
         }
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg: #1C1A17;
+                --bg-surface: #2A2724;
+                --bg-input: rgba(255, 255, 255, 0.08);
                 --text-primary: #F5F1EA;
                 --text-secondary: #9C958B;
+                --text-tertiary: rgba(245, 241, 234, 0.45);
+                --action: #F5F1EA;
+                --action-text: #1C1A17;
+                --divider: rgba(255, 255, 255, 0.10);
+                --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.30);
             }
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -81,6 +96,8 @@
             border-radius: var(--radius-full);
             text-decoration: none;
             transition: background 0.2s;
+            border: none;
+            cursor: pointer;
         }
         .btn:hover { background: var(--accent-dark); }
         .secondary-link {
@@ -91,6 +108,168 @@
             text-decoration: none;
         }
         .secondary-link:hover { text-decoration: underline; }
+
+        /* Beta Modal */
+        .beta-modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(0, 0, 0, 0.50);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+        .beta-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .beta-modal {
+            background: var(--bg);
+            border: 1px solid var(--divider);
+            border-radius: var(--radius-lg);
+            padding: 48px 32px;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(20px) scale(0.97);
+            transition: transform 0.25s ease;
+        }
+        .beta-modal-overlay.active .beta-modal {
+            transform: translateY(0) scale(1);
+        }
+        .beta-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            line-height: 1;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .beta-modal-close:hover {
+            background: var(--bg-surface);
+            color: var(--text-primary);
+        }
+        .beta-modal-icon { font-size: 48px; margin-bottom: 16px; }
+        .beta-modal h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+        .beta-modal > p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .beta-modal form {
+            display: flex;
+            gap: 8px;
+        }
+        .beta-modal form input[type="email"] {
+            flex: 1;
+            padding: 14px 16px;
+            border: 1px solid var(--divider);
+            border-radius: var(--radius-md);
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 16px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .beta-modal form input[type="email"]:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(183, 106, 76, 0.15);
+        }
+        .beta-modal form input[type="email"]::placeholder {
+            color: var(--text-tertiary);
+        }
+        .beta-modal form button[type="submit"] {
+            padding: 14px 24px;
+            background: var(--action);
+            color: var(--action-text);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 15px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .beta-modal form button[type="submit"]:hover:not(:disabled) {
+            opacity: 0.85;
+            transform: scale(1.02);
+        }
+        .beta-modal form button[type="submit"]:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .beta-modal form button[type="submit"].loading {
+            position: relative;
+            color: transparent;
+        }
+        .beta-modal form button[type="submit"].loading::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--action-text);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .beta-modal-success { padding: 16px 0; }
+        .beta-modal-success .success-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #7FB77E;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .beta-modal-success p {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .beta-modal-error { margin-top: 16px; }
+        .beta-modal-error p { font-size: 14px; color: #D65A8F; }
+        .beta-modal-error a { color: var(--accent); font-weight: 600; text-decoration: none; }
+        .beta-modal-error a:hover { text-decoration: underline; }
+        @media (max-width: 480px) {
+            .beta-modal { padding: 32px 16px; }
+            .beta-modal form { flex-direction: column; }
+            .beta-modal form button[type="submit"] { padding: 14px; }
+        }
     </style>
 </head>
 <body>
@@ -102,6 +281,30 @@
         <a class="secondary-link" href="https://getcolta.com">Back to getcolta.com</a>
     </div>
 
+    <!-- Android Beta Modal -->
+    <div class="beta-modal-overlay" id="betaModal" onclick="closeBetaModal(event)">
+        <div class="beta-modal">
+            <button class="beta-modal-close" onclick="closeBetaModal()" aria-label="Close">&times;</button>
+            <div class="beta-modal-icon">&#129302;</div>
+            <h3>Join the Android Beta</h3>
+            <p>Colta for Android is currently in closed beta. Enter your email and we'll send you an invite to test the app.</p>
+            <form id="betaForm" onsubmit="submitBetaForm(event)">
+                <input type="email" name="email" id="betaEmail" required autocomplete="email"
+                    placeholder="your@email.com">
+                <input type="hidden" name="_subject" value="New Android Beta Tester Request">
+                <input type="hidden" name="_template" value="table">
+                <button type="submit" id="betaSubmitBtn">Request Access</button>
+            </form>
+            <div class="beta-modal-success" id="betaSuccess" style="display:none;">
+                <div class="success-icon">&#10003;</div>
+                <p>Thanks! We'll send you an invite soon.</p>
+            </div>
+            <div class="beta-modal-error" id="betaError" style="display:none;">
+                <p>Something went wrong. Please email us at <a href="mailto:support@getcolta.com">support@getcolta.com</a>.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         (function() {
             var ua = navigator.userAgent || '';
@@ -110,10 +313,70 @@
                 link.href = 'https://apps.apple.com/app/colta/id6759000296';
                 link.textContent = 'Open in App Store';
             } else if (/Android/i.test(ua)) {
-                link.href = 'https://play.google.com/store/apps/details?id=com.colta.app';
-                link.textContent = 'Open in Play Store';
+                var btn = document.createElement('button');
+                btn.className = link.className;
+                btn.textContent = 'Open in Play Store';
+                btn.onclick = openBetaModal;
+                link.parentNode.replaceChild(btn, link);
             }
         })();
+
+        function openBetaModal() {
+            document.getElementById('betaModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            setTimeout(function() {
+                document.getElementById('betaEmail').focus();
+            }, 300);
+        }
+
+        function closeBetaModal(e) {
+            if (e && e.target !== e.currentTarget) return;
+            document.getElementById('betaModal').classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('betaForm').style.display = '';
+            document.getElementById('betaSuccess').style.display = 'none';
+            document.getElementById('betaError').style.display = 'none';
+            document.getElementById('betaForm').reset();
+            document.getElementById('betaSubmitBtn').disabled = false;
+            document.getElementById('betaSubmitBtn').classList.remove('loading');
+        }
+
+        function submitBetaForm(e) {
+            e.preventDefault();
+            var btn = document.getElementById('betaSubmitBtn');
+            var email = document.getElementById('betaEmail').value;
+            btn.disabled = true;
+            btn.classList.add('loading');
+
+            fetch('https://formsubmit.co/ajax/support@getcolta.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    email: email,
+                    _subject: 'New Android Beta Tester Request'
+                })
+            })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    document.getElementById('betaForm').style.display = 'none';
+                    document.getElementById('betaSuccess').style.display = 'block';
+                } else {
+                    document.getElementById('betaError').style.display = 'block';
+                    btn.disabled = false;
+                    btn.classList.remove('loading');
+                }
+            })
+            .catch(function() {
+                document.getElementById('betaError').style.display = 'block';
+                btn.disabled = false;
+                btn.classList.remove('loading');
+            });
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeBetaModal();
+        });
     </script>
 </body>
 </html>
