@@ -293,29 +293,34 @@ nav .nav-links a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-md);
+    gap: var(--space-sm);
     flex-wrap: wrap;
 }
 
-.hero .app-store-badge {
+.app-store-badge {
     display: inline-block;
+    height: 54px;
     transition: transform 0.2s ease;
 }
 
-.hero .app-store-badge:hover {
+.app-store-badge:hover {
     transform: scale(1.05);
 }
 
-.hero .app-store-badge img {
+.app-store-badge img {
     height: 54px;
 }
 
 .google-play-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
+    overflow: visible;
     transition: transform 0.2s ease;
 }
 
@@ -324,8 +329,8 @@ nav .nav-links a.active {
 }
 
 .google-play-badge img {
-    height: 80px;
-    margin: -13px -16px;
+    height: 79px;
+    margin: -12.5px -15px;
 }
 
 .coming-soon-badge {
@@ -593,27 +598,6 @@ nav .nav-links a.active {
     color: var(--text-secondary);
     margin-bottom: var(--space-xl);
     line-height: 1.5;
-}
-
-.cta-card .store-badges {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-md);
-    flex-wrap: wrap;
-}
-
-.cta-card .app-store-badge {
-    display: inline-block;
-    transition: transform 0.2s ease;
-}
-
-.cta-card .app-store-badge:hover {
-    transform: scale(1.05);
-}
-
-.cta-card .app-store-badge img {
-    height: 54px;
 }
 
 /* ---- Footer ---- */
