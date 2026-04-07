@@ -288,7 +288,7 @@ nav .nav-links a.active {
 .activity-pill.exhibition { background: var(--color-exhibition); }
 .activity-pill.concert { background: var(--color-concert); color: #1E1E1E; }
 
-/* Store badges */
+/* Store badges wrapper */
 .store-badges {
     display: flex;
     align-items: center;
@@ -297,51 +297,41 @@ nav .nav-links a.active {
     flex-wrap: wrap;
 }
 
-.store-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    height: 52px;
-    padding: 0 16px 0 12px;
-    background: #000;
-    color: #fff;
-    border: 1.2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 11px;
-    text-decoration: none;
-    cursor: pointer;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+.app-store-badge {
+    display: inline-block;
+    height: 54px;
     transition: transform 0.2s ease;
 }
 
-.store-badge:hover {
+.app-store-badge:hover {
     transform: scale(1.05);
 }
 
-.store-badge-logo {
-    flex-shrink: 0;
+.app-store-badge img {
+    height: 54px;
 }
 
-.store-badge-text {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+.google-play-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
 }
 
-.store-badge-label {
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 0.03em;
-    white-space: nowrap;
+.google-play-badge:hover {
+    transform: scale(1.05);
 }
 
-.store-badge-name {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    white-space: nowrap;
+.google-play-badge img {
+    height: 73px;
+    margin: 0 -13px;
 }
 
 .coming-soon-badge {
