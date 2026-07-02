@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colta - Log your cultural experiences</title>
     <meta name="description" content="Colta is a social journal for your cultural life. Track books, movies, theatre, exhibitions and concerts, follow friends and join clubs to plan outings together.">
-    <meta name="theme-color" content="#F5F1EA" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#1C1A17" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
 
-    <!-- Google Fonts: Fraunces (web equivalent of Cooper) -->
+    <!-- Google Fonts: Inter (Colta 3.0 UI typeface) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -73,6 +73,9 @@
             <div class="store-badges">
                 <a href="https://apps.apple.com/fr/app/colta/id6759000296?l=en-GB" class="app-store-badge" aria-label="Download on the App Store">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.colta.app" class="play-store-badge" aria-label="Get it on Google Play">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
                 </a>
             </div>
         </div>
@@ -198,6 +201,32 @@
         </div>
     </section>
 
+    <!-- Map -->
+    <section class="map-section" id="map">
+        <div class="map-inner">
+            <div class="map-copy">
+                <span class="clubs-eyebrow"><span class="en-only">Paris</span><span class="fr-only">Paris</span></span>
+                <h2><span class="en-only">Every museum & venue on the <span class="accent">Map</span></span><span class="fr-only">Chaque musée et lieu sur la <span class="accent">Carte</span></span></h2>
+                <p class="section-subtitle"><span class="en-only">Explore an interactive map of Paris museums, cinemas, theatres and concert halls. See where you've been, discover new places nearby and pin your next cultural outing.</span><span class="fr-only">Explorez une carte interactive des musées, cinémas, théâtres et salles de concert de Paris. Voyez où vous êtes allé, découvrez de nouveaux lieux à proximité et épinglez votre prochaine sortie.</span></p>
+                <ul class="map-highlights">
+                    <li><span class="dot" style="background: var(--color-exhibition)"></span><span class="en-only">Museums & exhibitions across the city</span><span class="fr-only">Musées et expositions dans toute la ville</span></li>
+                    <li><span class="dot" style="background: var(--color-movie)"></span><span class="en-only">Cinemas, theatres & concert halls</span><span class="fr-only">Cinémas, théâtres et salles de concert</span></li>
+                    <li><span class="dot" style="background: var(--accent)"></span><span class="en-only">Pin places to visit and log them on the spot</span><span class="fr-only">Épinglez des lieux à visiter et enregistrez-les sur place</span></li>
+                </ul>
+            </div>
+
+            <div class="map-visual" aria-hidden="true">
+                <div class="map-grid-lines"></div>
+                <div class="map-pin exhibition" style="top: 18%; left: 22%;"><span>&#127963;</span></div>
+                <div class="map-pin movie" style="top: 30%; left: 62%;"><span>&#127916;</span></div>
+                <div class="map-pin theatre" style="top: 60%; left: 40%;"><span>&#127917;</span></div>
+                <div class="map-pin book" style="top: 72%; left: 72%;"><span>&#128214;</span></div>
+                <div class="map-pin concert" style="top: 44%; left: 30%;"><span>&#127928;</span></div>
+                <div class="map-badge"><span class="pulse"></span><span class="en-only">128 places in Paris</span><span class="fr-only">128 lieux à Paris</span></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Clubs -->
     <section class="clubs" id="clubs">
         <div class="clubs-inner">
@@ -280,6 +309,59 @@
         </div>
     </section>
 
+    <!-- Gamification -->
+    <section class="gamification" id="rewards">
+        <div class="gamification-inner">
+            <h2><span class="en-only">Keep the streak, earn the medals</span><span class="fr-only">Gardez la série, gagnez les médailles</span></h2>
+            <p class="section-subtitle"><span class="en-only">Colta turns your cultural habit into a game. Build a daily streak and unlock medals as you explore more.</span><span class="fr-only">Colta transforme votre habitude culturelle en jeu. Créez une série quotidienne et débloquez des médailles au fil de vos découvertes.</span></p>
+
+            <div class="gami-grid">
+                <div class="gami-card">
+                    <div class="streak-flame">&#128293;</div>
+                    <h3><span class="en-only">Daily streaks</span><span class="fr-only">Séries quotidiennes</span></h3>
+                    <p><span class="en-only">Log something every day to grow your streak. Miss a day and it resets &mdash; so keep the culture flowing.</span><span class="fr-only">Enregistrez quelque chose chaque jour pour faire grandir votre série. Un jour manqué et elle repart de zéro &mdash; alors gardez le rythme.</span></p>
+                    <div class="streak-count">
+                        <span class="num">27</span>
+                        <span class="unit"><span class="en-only">day streak</span><span class="fr-only">jours de série</span></span>
+                    </div>
+                    <div class="streak-week">
+                        <div class="streak-day on">M</div>
+                        <div class="streak-day on">T</div>
+                        <div class="streak-day on">W</div>
+                        <div class="streak-day on">T</div>
+                        <div class="streak-day on">F</div>
+                        <div class="streak-day on">S</div>
+                        <div class="streak-day">S</div>
+                    </div>
+                </div>
+
+                <div class="gami-card">
+                    <div class="streak-flame">&#127941;</div>
+                    <h3><span class="en-only">Collect medals</span><span class="fr-only">Collectionnez des médailles</span></h3>
+                    <p><span class="en-only">Hit milestones across films, books, expos and more to earn bronze, silver and gold medals for your profile.</span><span class="fr-only">Atteignez des paliers pour les films, livres, expos et plus encore afin de gagner des médailles de bronze, d'argent et d'or sur votre profil.</span></p>
+                    <div class="medal-row">
+                        <div class="medal gold">
+                            <div class="disc">&#127909;</div>
+                            <span class="medal-label"><span class="en-only">Cinephile</span><span class="fr-only">Cinéphile</span></span>
+                        </div>
+                        <div class="medal silver">
+                            <div class="disc">&#128218;</div>
+                            <span class="medal-label"><span class="en-only">Bookworm</span><span class="fr-only">Lecteur</span></span>
+                        </div>
+                        <div class="medal bronze">
+                            <div class="disc">&#127917;</div>
+                            <span class="medal-label"><span class="en-only">Playgoer</span><span class="fr-only">Théâtre</span></span>
+                        </div>
+                        <div class="medal locked">
+                            <div class="disc">&#128274;</div>
+                            <span class="medal-label"><span class="en-only">Locked</span><span class="fr-only">Bloqué</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- How It Works -->
     <section class="how-it-works">
         <h2><span class="en-only">How it works</span><span class="fr-only">Comment ça marche</span></h2>
@@ -327,6 +409,9 @@
             <div class="store-badges">
                 <a href="https://apps.apple.com/fr/app/colta/id6759000296?l=en-GB" class="app-store-badge" aria-label="Download on the App Store">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.colta.app" class="play-store-badge" aria-label="Get it on Google Play">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
                 </a>
             </div>
         </div>

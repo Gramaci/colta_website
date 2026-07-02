@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colta — Open in App</title>
-    <meta name="theme-color" content="#F5F1EA" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#1C1A17" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
 
     <meta property="og:title" content="Check out this profile on Colta">
     <meta property="og:description" content="Colta is a social journal for your cultural life. Track books, movies, theatre, exhibitions, and concerts.">
@@ -14,46 +14,46 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <style>
         :root {
-            --bg: #F5F1EA;
-            --bg-surface: #E8E3DA;
-            --bg-input: rgba(255, 255, 255, 0.50);
-            --text-primary: #1E1E1E;
-            --text-secondary: #6F6A63;
-            --text-tertiary: rgba(30, 30, 30, 0.50);
-            --accent: #B76A4C;
-            --accent-dark: #8E4A30;
-            --action: #1E1E1E;
-            --action-text: #FAFAF7;
-            --divider: rgba(0, 0, 0, 0.08);
+            --bg: #F7F6F2;
+            --bg-surface: #ECEAE3;
+            --bg-input: #F0EEE8;
+            --text-primary: #17150F;
+            --text-secondary: #74726B;
+            --text-tertiary: rgba(23, 21, 15, 0.40);
+            --accent: #E0613C;
+            --accent-dark: #B8431F;
+            --action: #17150F;
+            --action-text: #FFFFFF;
+            --divider: rgba(0, 0, 0, 0.13);
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 16px;
             --radius-full: 9999px;
-            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.09);
         }
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg: #1C1A17;
-                --bg-surface: #2A2724;
-                --bg-input: rgba(255, 255, 255, 0.08);
-                --text-primary: #F5F1EA;
-                --text-secondary: #9C958B;
-                --text-tertiary: rgba(245, 241, 234, 0.45);
-                --action: #F5F1EA;
-                --action-text: #1C1A17;
-                --divider: rgba(255, 255, 255, 0.10);
-                --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.30);
+                --bg: #101010;
+                --bg-surface: #1C1C1E;
+                --bg-input: #232325;
+                --text-primary: #F7F7F5;
+                --text-secondary: #9C9A94;
+                --text-tertiary: rgba(247, 247, 245, 0.45);
+                --action: #F7F7F5;
+                --action-text: #101010;
+                --divider: rgba(255, 255, 255, 0.14);
+                --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
             }
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--bg);
             color: var(--text-primary);
             min-height: 100dvh;
@@ -74,8 +74,9 @@
             margin: 0 auto 24px;
         }
         h1 {
-            font-family: 'Fraunces', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-weight: 700;
+            letter-spacing: -0.3px;
             font-size: 24px;
             margin-bottom: 8px;
         }
@@ -89,7 +90,7 @@
             display: inline-block;
             background: var(--accent);
             color: var(--action-text);
-            font-family: 'Fraunces', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-weight: 600;
             font-size: 16px;
             padding: 14px 32px;
@@ -169,7 +170,7 @@
         }
         .beta-modal-icon { font-size: 48px; margin-bottom: 16px; }
         .beta-modal h3 {
-            font-family: 'Fraunces', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 24px;
             font-weight: 800;
             margin-bottom: 8px;
@@ -199,7 +200,7 @@
         }
         .beta-modal form input[type="email"]:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(183, 106, 76, 0.15);
+            box-shadow: 0 0 0 3px rgba(224, 97, 60, 0.15);
         }
         .beta-modal form input[type="email"]::placeholder {
             color: var(--text-tertiary);
