@@ -253,22 +253,36 @@ nav .nav-links a.active { color: var(--text-primary); }
 .store-badges {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .app-store-badge,
 .play-store-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    flex-shrink: 0;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .app-store-badge:hover,
 .play-store-badge:hover { transform: translateY(-2px); }
 
-.app-store-badge img { height: 52px; }
-/* Google's badge PNG ships with built-in padding; scale + clip to match Apple. */
-.play-store-badge img { height: 76px; margin: -12px 0; }
+.app-store-badge img {
+    display: block;
+    height: 52px;
+    width: auto;
+}
+
+/* Google badge PNG has built-in padding — scale inside a fixed 52px box to align with Apple. */
+.play-store-badge img {
+    display: block;
+    height: 76px;
+    width: auto;
+    margin: 0;
+}
 
 /* ---- Hero ---- */
 
@@ -503,10 +517,10 @@ footer .copyright { font-size: 13px; color: var(--text-tertiary); width: 100%; }
     .hero { padding: 132px 0 72px; }
     .hero-grid,
     .row-grid { grid-template-columns: 1fr; gap: var(--space-xxl); }
-    .hero-visual { order: -1; }
+    /* Hero: headline + CTAs first, screenshot below (standard landing-page flow). */
+    .row-visual { order: -1; }
     .row.reverse .row-copy,
     .row.reverse .row-visual { order: 0; }
-    .row-visual { order: -1; }
     .lead, .hero .lead { max-width: none; }
     .steps { grid-template-columns: 1fr; gap: var(--space-xl); }
 }
