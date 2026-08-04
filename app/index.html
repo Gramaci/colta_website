@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="lang-en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Get Colta</title>
+    <meta name="description" content="Download Colta on the App Store or Google Play.">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <meta property="og:title" content="Get Colta">
+    <meta property="og:description" content="Your cultural life, beautifully logged.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getcolta.com/app">
+    <meta property="og:image" content="https://getcolta.com/logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://getcolta.com/logo.png">
+
+    <style>
+        :root {
+            --bg: #F7F6F2;
+            --bg-surface: #ECEAE3;
+            --text-primary: #17150F;
+            --text-secondary: #74726B;
+            --accent: #E0613C;
+            --action: #17150F;
+            --action-text: #FFFFFF;
+            --divider: rgba(23, 21, 15, 0.10);
+            --maxw: 420px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #101010;
+                --bg-surface: #1C1C1E;
+                --text-primary: #F7F7F5;
+                --text-secondary: #9C9A94;
+                --action: #F7F7F5;
+                --action-text: #101010;
+                --divider: rgba(255, 255, 255, 0.12);
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 24px calc(32px + env(safe-area-inset-bottom));
+            text-align: center;
+        }
+
+        img { display: block; max-width: 100%; }
+
+        .wrap { width: 100%; max-width: var(--maxw); }
+
+        .mark {
+            width: 68px;
+            height: 68px;
+            border-radius: 16px;
+            margin: 0 auto 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        p.lead {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 26px;
+        }
+
+        /* ---- States ---- */
+
+        [data-state] { display: none; }
+        body.state-redirect [data-state="redirect"],
+        body.state-blocked  [data-state="blocked"],
+        body.state-choose   [data-state="choose"] { display: block; }
+
+        /* ---- Spinner ---- */
+
+        .spinner {
+            width: 26px;
+            height: 26px;
+            margin: 0 auto 18px;
+            border: 2.5px solid var(--divider);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        @media (prefers-reduced-motion: reduce) {
+            .spinner { animation-duration: 2s; }
+        }
+
+        /* ---- Buttons ---- */
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 9999px;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            background: var(--action);
+            color: var(--action-text);
+            margin-bottom: 12px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1.5px solid var(--divider);
+        }
+
+        .btn.accent { background: var(--accent); color: #FFFFFF; }
+
+        /* ---- Instruction steps ---- */
+
+        .steps {
+            text-align: left;
+            background: var(--bg-surface);
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 22px;
+        }
+
+        .steps li {
+            list-style: none;
+            display: flex;
+            gap: 12px;
+            font-size: 15px;
+            padding: 7px 0;
+        }
+
+        .steps .n {
+            flex: 0 0 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        .dots {
+            display: inline-block;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 0 5px;
+            border: 1.5px solid var(--divider);
+            border-radius: 6px;
+        }
+
+        /* ---- Store badges (desktop) ---- */
+
+        .badges {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .badges a { display: block; }
+        .badges .apple img { height: 52px; width: auto; }
+        /* The Google badge PNG has built-in padding — oversize it so both read the same height. */
+        .badges .google img { height: 74px; width: auto; margin: -11px 0; }
+
+        .hint {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 16px;
+        }
+
+        .foot {
+            margin-top: 28px;
+            font-size: 13px;
+        }
+
+        .foot a { color: var(--text-secondary); }
+
+        html.lang-en .fr-only { display: none !important; }
+        html.lang-fr .en-only { display: none !important; }
+    </style>
+
+    <script>
+        // Set the language class before first paint so copy never flashes.
+        (function () {
+            var stored = null;
+            try { stored = localStorage.getItem('colta_lang'); } catch (e) {}
+            var lang = stored || ((navigator.language || '').indexOf('fr') === 0 ? 'fr' : 'en');
+            var html = document.documentElement;
+            html.lang = lang;
+            html.className = 'lang-' + lang;
+        })();
+    </script>
+</head>
+<body>
+
+    <div class="wrap">
+
+        <img class="mark" src="/logo.png" alt="Colta">
+
+        <!-- Auto-redirect in progress -->
+        <div data-state="redirect">
+            <div class="spinner"></div>
+            <h1><span class="en-only">Opening the store&hellip;</span><span class="fr-only">Ouverture du store&hellip;</span></h1>
+            <p class="lead"><span class="en-only">Hang on a second.</span><span class="fr-only">Un instant.</span></p>
+            <a class="btn secondary" id="manual-store" href="https://apps.apple.com/app/id6759000296">
+                <span class="en-only">Tap here if nothing happens</span><span class="fr-only">Touchez ici si rien ne se passe</span>
+            </a>
+        </div>
+
+        <!-- In-app browser is blocking the store -->
+        <div data-state="blocked">
+            <h1><span class="en-only">Get Colta</span><span class="fr-only">Obtenir Colta</span></h1>
+            <p class="lead">
+                <span class="en-only">This app&rsquo;s browser can&rsquo;t open the store.</span>
+                <span class="fr-only">Le navigateur de cette app ne peut pas ouvrir le store.</span>
+            </p>
+
+            <button class="btn accent" id="open-browser">
+                <span class="en-only">Open in browser</span><span class="fr-only">Ouvrir dans le navigateur</span>
+            </button>
+
+            <p class="hint" id="guide-intro" hidden>
+                <span class="en-only">Nothing happened? Do it by hand:</span>
+                <span class="fr-only">Rien ne s&rsquo;est passé ? Faites-le à la main :</span>
+            </p>
+
+            <ol class="steps" id="steps-ios" hidden>
+                <li><span class="n">1</span><span><span class="en-only">Tap the <span class="dots">&middot;&middot;&middot;</span> menu in the corner of the screen</span><span class="fr-only">Touchez le menu <span class="dots">&middot;&middot;&middot;</span> dans le coin de l&rsquo;écran</span></span></li>
+                <li><span class="n">2</span><span><span class="en-only">Choose <b>Open in browser</b> (Safari)</span><span class="fr-only">Choisissez <b>Ouvrir dans le navigateur</b> (Safari)</span></span></li>
+                <li><span class="n">3</span><span><span class="en-only">The App Store opens automatically</span><span class="fr-only">L&rsquo;App Store s&rsquo;ouvre automatiquement</span></span></li>
+            </ol>
+
+            <ol class="steps" id="steps-android" hidden>
+                <li><span class="n">1</span><span><span class="en-only">Tap the <span class="dots">&middot;&middot;&middot;</span> menu in the corner of the screen</span><span class="fr-only">Touchez le menu <span class="dots">&middot;&middot;&middot;</span> dans le coin de l&rsquo;écran</span></span></li>
+                <li><span class="n">2</span><span><span class="en-only">Choose <b>Open in Chrome</b></span><span class="fr-only">Choisissez <b>Ouvrir dans Chrome</b></span></span></li>
+                <li><span class="n">3</span><span><span class="en-only">Google Play opens automatically</span><span class="fr-only">Google Play s&rsquo;ouvre automatiquement</span></span></li>
+            </ol>
+
+            <button class="btn secondary" id="copy-link" hidden>
+                <span class="en-only">Copy link instead</span><span class="fr-only">Copier le lien</span>
+            </button>
+            <p class="hint" id="copy-hint" hidden>
+                <span class="en-only">Link copied &mdash; paste it in Safari or Chrome.</span>
+                <span class="fr-only">Lien copié &mdash; collez-le dans Safari ou Chrome.</span>
+            </p>
+        </div>
+
+        <!-- Desktop / unknown device -->
+        <div data-state="choose">
+            <h1><span class="en-only">Get Colta</span><span class="fr-only">Obtenir Colta</span></h1>
+            <div class="badges">
+                <a class="apple" href="https://apps.apple.com/app/id6759000296" aria-label="Download on the App Store">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                </a>
+                <a class="google" href="https://play.google.com/store/apps/details?id=com.colta.app" aria-label="Get it on Google Play">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                </a>
+            </div>
+            <p class="foot"><a href="/">getcolta.com</a></p>
+        </div>
+
+    </div>
+
+    <script>
+    (function () {
+        var IOS_URL     = 'https://apps.apple.com/app/id6759000296';
+        var ANDROID_URL = 'https://play.google.com/store/apps/details?id=com.colta.app';
+        var PAGE_URL    = 'https://getcolta.com/app';
+        var PACKAGE     = 'com.colta.app';
+
+        // Opens the Play Store app directly, falling back to the web listing.
+        var PLAY_INTENT = 'intent://details?id=' + PACKAGE +
+            '#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=' +
+            encodeURIComponent(ANDROID_URL) + ';end';
+
+        // Reopens this page in Chrome, which is not restricted like the in-app browser.
+        var CHROME_INTENT = 'intent://getcolta.com/app#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' +
+            encodeURIComponent(ANDROID_URL) + ';end';
+
+        var ua = navigator.userAgent || navigator.vendor || '';
+        var override = (location.search.match(/[?&]p=(ios|android|desktop)/) || [])[1];
+
+        var isIOS = override ? override === 'ios'
+            : /iPad|iPhone|iPod/.test(ua) ||
+              (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        var isAndroid = override ? override === 'android' : /Android/i.test(ua);
+
+        var inApp = /Instagram|FBAN|FBAV|FB_IAB|Messenger/i.test(ua) ||
+                    /BytedanceWebview|musical_ly|TikTok|Bytelo/i.test(ua) ||
+                    /Snapchat|LinkedInApp|Twitter|Pinterest|Line\//i.test(ua);
+
+        // ?preview=blocked renders the in-app-browser screen on any device.
+        var preview = /[?&]preview=blocked/.test(location.search);
+
+        var storeUrl = isIOS ? IOS_URL : ANDROID_URL;
+        var body = document.body;
+        var redirected = false;
+
+        function setState(name) {
+            body.className = 'state-' + name;
+        }
+
+        function showBlocked() {
+            if (redirected) return;
+            setState('blocked');
+        }
+
+        // The "Open in browser" button is silently ignored by some in-app
+        // browsers, so the manual steps only appear once it has failed.
+        function showGuide() {
+            if (redirected) return;
+            document.getElementById('guide-intro').hidden = false;
+            document.getElementById(isAndroid ? 'steps-android' : 'steps-ios').hidden = false;
+            document.getElementById('copy-link').hidden = false;
+        }
+
+        // If the store or another app takes over, the page is backgrounded.
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) redirected = true;
+        });
+        window.addEventListener('pagehide', function () { redirected = true; });
+
+        if (!isIOS && !isAndroid && !preview) {
+            setState('choose');
+            return;
+        }
+
+        document.getElementById('manual-store').href = storeUrl;
+
+        document.getElementById('open-browser').addEventListener('click', function () {
+            if (isAndroid) {
+                window.location.href = CHROME_INTENT;
+            } else {
+                // Supported by some iOS in-app browsers; harmless where it is not.
+                window.location.href = 'x-safari-' + PAGE_URL;
+            }
+            setTimeout(showGuide, 1200);
+        });
+
+        document.getElementById('copy-link').addEventListener('click', function () {
+            var done = function () { document.getElementById('copy-hint').hidden = false; };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(PAGE_URL).then(done, done);
+            } else {
+                var field = document.createElement('input');
+                field.value = PAGE_URL;
+                document.body.appendChild(field);
+                field.select();
+                try { document.execCommand('copy'); } catch (e) {}
+                document.body.removeChild(field);
+                done();
+            }
+        });
+
+        if (preview) {
+            showBlocked();
+            return;
+        }
+
+        setState('redirect');
+
+        if (isAndroid && inApp) {
+            // The intent URL escapes the in-app webview on most Android launchers.
+            window.location.href = PLAY_INTENT;
+            setTimeout(function () { window.location.href = ANDROID_URL; }, 900);
+        } else {
+            window.location.replace(storeUrl);
+        }
+
+        if (inApp) {
+            setTimeout(showBlocked, 1800);
+        }
+    })();
+    </script>
+
+</body>
+</html>
