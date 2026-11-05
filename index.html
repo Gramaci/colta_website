@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colta — Your cultural life, logged</title>
-    <meta name="description" content="Colta is a social journal for your cultural life. Log films, exhibitions, concerts, theatre and books, map Paris museums, join clubs and share it all with friends.">
+    <title>Colta. Ton carnet culturel</title>
+    <meta name="description" content="Colta, c'est ton carnet culturel. Films, séries, livres, expos, concerts et théâtre. Ta liste, tes objectifs, et tes amis.">
     <meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
 
@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Colta — Your cultural life, logged">
-    <meta property="og:description" content="A social journal for your cultural life. Log films, exhibitions, concerts, theatre and books, map Paris museums, join clubs and share it with friends.">
+    <meta property="og:title" content="Colta. Ton carnet culturel">
+    <meta property="og:description" content="Films, séries, livres, expos, concerts et théâtre. Ta liste, tes objectifs, et tes amis.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://getcolta.com">
     <meta property="og:image" content="https://getcolta.com/logo.png">
@@ -38,9 +38,9 @@
             </a>
             <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
             <ul class="nav-links">
-                <li><a href="#log"><span class="en-only">Log</span><span class="fr-only">Journal</span></a></li>
-                <li><a href="#map"><span class="en-only">Map</span><span class="fr-only">Carte</span></a></li>
-                <li><a href="#clubs"><span class="en-only">Clubs</span><span class="fr-only">Clubs</span></a></li>
+                <li><a href="#log"><span class="en-only">Log</span><span class="fr-only">Carnet</span></a></li>
+                <li><a href="#liste"><span class="en-only">List</span><span class="fr-only">Liste</span></a></li>
+                <li><a href="#amis"><span class="en-only">Friends</span><span class="fr-only">Amis</span></a></li>
                 <li><a href="support.html">Support</a></li>
             </ul>
             <div class="lang-toggle">
@@ -54,11 +54,11 @@
     <header class="hero">
         <div class="container hero-grid">
             <div class="hero-copy">
-                <span class="eyebrow"><span class="en-only">A social cultural journal</span><span class="fr-only">Le journal social de votre culture</span></span>
-                <h1 class="en-only">Your cultural life, beautifully logged.</h1>
-                <h1 class="fr-only">Votre vie culturelle, joliment consignée.</h1>
-                <p class="lead en-only">Keep track of every film, exhibition, concert, play and book. Map the museums of Paris, join clubs and share it all with the friends who love culture as much as you.</p>
-                <p class="lead fr-only">Gardez une trace de chaque film, expo, concert, pièce et livre. Cartographiez les musées de Paris, rejoignez des clubs et partagez tout avec les amis qui aiment la culture autant que vous.</p>
+                <span class="eyebrow"><span class="en-only">Your cultural journal</span><span class="fr-only">Ton carnet culturel</span></span>
+                <h1 class="en-only">What you've seen, and what you want to see.</h1>
+                <h1 class="fr-only">Ce que tu as vu. Ce que tu as envie de voir.</h1>
+                <p class="lead en-only">Films, series, books, exhibitions, concerts and plays. Log one in a few seconds, keep a list, set a goal, and find your friends.</p>
+                <p class="lead fr-only">Films, séries, livres, expos, concerts et théâtre. Tu notes en quelques secondes, tu gardes une liste, tu te fixes un objectif, et tu retrouves tes amis.</p>
                 <div class="hero-actions">
                     <div class="store-badges">
                         <a href="https://apps.apple.com/fr/app/colta/id6759000296?l=en-GB" class="app-store-badge" aria-label="Download on the App Store">
@@ -81,117 +81,70 @@
     </header>
 
     <main>
-        <!-- Log every outing -->
+        <!-- Log -->
         <section class="row reverse" id="log">
             <div class="container row-grid">
                 <div class="row-copy">
-                    <span class="eyebrow"><span class="en-only">Log anything</span><span class="fr-only">Tout enregistrer</span></span>
-                    <h2 class="section-title en-only">Every outing, in one place.</h2>
-                    <h2 class="section-title fr-only">Chaque sortie, au même endroit.</h2>
-                    <p class="lead en-only">Add a title, a note, photos, the place and the date &mdash; and Colta files it under the right kind of culture. Keep a log private, or let it show up in your friends' feed.</p>
-                    <p class="lead fr-only">Ajoutez un titre, une note, des photos, le lieu et la date &mdash; et Colta le classe dans le bon type de culture. Gardez un log privé, ou laissez-le apparaître dans le fil de vos amis.</p>
+                    <span class="eyebrow"><span class="en-only">The log</span><span class="fr-only">Le log</span></span>
+                    <h2 class="section-title en-only">A title, some badges, a note.</h2>
+                    <h2 class="section-title fr-only">Un titre, des badges, un avis.</h2>
+                    <p class="lead en-only">Pick a type, search the title, add a badge and a note if you want. For an exhibition, a play or a concert, you can add photos. Date and place are the moment you log. Change them later by editing.</p>
+                    <p class="lead fr-only">Tu choisis le type, tu cherches le titre, tu ajoutes un badge et un avis si tu veux. Pour une expo, un théâtre ou un concert, tu peux ajouter des photos. La date et le lieu sont ceux du moment. Tu les changes en modifiant le log.</p>
                     <ul class="row-points">
-                        <li><span class="d" style="background: var(--color-movie)"></span><span class="en-only"><b>Films</b> &amp; <b>theatre</b>, <b>exhibitions</b>, <b>concerts</b> and <b>books</b></span><span class="fr-only"><b>Films</b> &amp; <b>théâtre</b>, <b>expos</b>, <b>concerts</b> et <b>livres</b></span></li>
-                        <li><span class="d"></span><span class="en-only">Up to 10 photos, notes and a location per log</span><span class="fr-only">Jusqu'à 10 photos, des notes et un lieu par log</span></li>
-                        <li><span class="d" style="background: var(--color-exhibition)"></span><span class="en-only">Badge the ones you loved to remember them</span><span class="fr-only">Marquez vos coups de cœur pour vous en souvenir</span></li>
+                        <li><span class="d" style="background: var(--color-movie)"></span><span class="en-only"><b>Films</b>, <b>series</b> and <b>books</b></span><span class="fr-only"><b>Films</b>, <b>séries</b> et <b>livres</b></span></li>
+                        <li><span class="d" style="background: var(--color-series)"></span><span class="en-only"><b>Plays</b>, <b>exhibitions</b> and <b>concerts</b></span><span class="fr-only"><b>Théâtre</b>, <b>expos</b> et <b>concerts</b></span></li>
+                        <li><span class="d" style="background: var(--color-exhibition)"></span><span class="en-only">Badges and a note, only if you want them</span><span class="fr-only">Badges et avis, seulement si tu veux</span></li>
                     </ul>
                 </div>
                 <div class="row-visual">
                     <div class="device">
-                        <img src="screenshots/profile.jpg" width="470" height="1024" loading="lazy" alt="A Colta profile showing logs, medals, clubs and a grid of recent cultural outings">
+                        <img src="screenshots/profile.jpg" width="470" height="1024" loading="lazy" alt="A Colta profile with recent cultural logs">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Paris museums map -->
-        <section class="row" id="map">
+        <!-- List, goals, stats -->
+        <section class="row" id="liste">
             <div class="container row-grid">
                 <div class="row-copy">
-                    <span class="eyebrow"><span class="en-only">Paris museums</span><span class="fr-only">Musées de Paris</span></span>
-                    <h2 class="section-title en-only">A map of every museum in Paris.</h2>
-                    <h2 class="section-title fr-only">Une carte de tous les musées de Paris.</h2>
-                    <p class="lead en-only">Colta maps the museums of Paris so you always know what's near. See where you've already been, find the ones you've been meaning to visit, and pick your next Sunday.</p>
-                    <p class="lead fr-only">Colta cartographie les musées de Paris pour toujours savoir ce qui est à côté. Voyez où vous êtes déjà allé, trouvez ceux que vous vouliez visiter, et choisissez votre prochain dimanche.</p>
+                    <span class="eyebrow"><span class="en-only">Home</span><span class="fr-only">L'accueil</span></span>
+                    <h2 class="section-title en-only">Your list, your goals, your numbers.</h2>
+                    <h2 class="section-title fr-only">Ta liste, tes objectifs, tes chiffres.</h2>
+                    <p class="lead en-only">Home starts with what you want to see, then the goals you set, then your stats. A film from this year, a series you finished, a book still waiting.</p>
+                    <p class="lead fr-only">L'accueil commence par ce que tu as envie de voir, puis les objectifs que tu te fixes, puis tes stats. Un film de l'année, une série finie, un livre qui attend.</p>
                     <ul class="row-points">
-                        <li><span class="d"></span><span class="en-only">Every Paris museum, pinned on one map</span><span class="fr-only">Chaque musée parisien, épinglé sur une carte</span></li>
-                        <li><span class="d"></span><span class="en-only">See visited vs. still-to-discover at a glance</span><span class="fr-only">Visités ou encore à découvrir, en un coup d'œil</span></li>
+                        <li><span class="d"></span><span class="en-only">A list, so it doesn't live in Notes anymore</span><span class="fr-only">Une liste, pour ne plus la tenir dans Notes</span></li>
+                        <li><span class="d"></span><span class="en-only">As many goals as you want</span><span class="fr-only">Autant d'objectifs que tu veux</span></li>
+                        <li><span class="d"></span><span class="en-only">Stats by type, over time</span><span class="fr-only">Des stats par type, dans le temps</span></li>
                     </ul>
                 </div>
                 <div class="row-visual">
-                    <div class="device-duo">
-                        <div class="device">
-                            <img src="screenshots/map-paris.jpg" width="470" height="1024" loading="lazy" alt="The Colta map of Paris museums with dozens of pins across the city">
-                        </div>
-                        <div class="device">
-                            <img src="screenshots/museum-detail.jpg" width="470" height="1024" loading="lazy" alt="Museum detail sheet for the Musée des Plans-reliefs with photos, hours, address and a J'y suis allé button">
-                        </div>
+                    <div class="device">
+                        <img src="screenshots/home-feed.jpg" width="470" height="1024" loading="lazy" alt="The Colta home screen">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Clubs -->
-        <section class="row reverse" id="clubs">
+        <!-- Friends -->
+        <section class="row reverse" id="amis">
             <div class="container row-grid">
                 <div class="row-copy">
-                    <span class="eyebrow"><span class="en-only">Clubs</span><span class="fr-only">Clubs</span></span>
-                    <h2 class="section-title en-only">Culture is better together.</h2>
-                    <h2 class="section-title fr-only">La culture, c'est mieux à plusieurs.</h2>
-                    <p class="lead en-only">Start a club around the films, books or shows you love. Invite friends, plan outings with dates and venues, post and poll, and build a shared journal of everything you see together.</p>
-                    <p class="lead fr-only">Créez un club autour des films, livres ou spectacles que vous aimez. Invitez des amis, organisez des sorties avec dates et lieux, publiez et sondez, et tenez un journal partagé de tout ce que vous voyez ensemble.</p>
+                    <span class="eyebrow"><span class="en-only">Friends</span><span class="fr-only">Amis</span></span>
+                    <h2 class="section-title en-only">Find the people you already know.</h2>
+                    <h2 class="section-title fr-only">Retrouve les gens que tu connais.</h2>
+                    <p class="lead en-only">Add your number, look through your contacts, and invite the ones who aren't here yet. The friends feed shows their logs. Your number is encrypted.</p>
+                    <p class="lead fr-only">Tu ajoutes ton numéro, tu cherches dans tes contacts, et tu invites ceux qui ne sont pas encore là. Le fil Amis montre leurs logs. Ton numéro est crypté.</p>
                     <ul class="row-points">
-                        <li><span class="d"></span><span class="en-only">Public or private clubs</span><span class="fr-only">Clubs publics ou privés</span></li>
-                        <li><span class="d"></span><span class="en-only">Events with RSVPs, posts and polls</span><span class="fr-only">Événements avec RSVP, posts et sondages</span></li>
+                        <li><span class="d"></span><span class="en-only">Your number stays encrypted</span><span class="fr-only">Ton numéro reste crypté</span></li>
+                        <li><span class="d"></span><span class="en-only">Search your contacts, or invite someone</span><span class="fr-only">Tu cherches dans tes contacts, ou tu invites quelqu'un</span></li>
+                        <li><span class="d"></span><span class="en-only">A feed with no algorithm</span><span class="fr-only">Un fil sans algorithme</span></li>
                     </ul>
                 </div>
                 <div class="row-visual">
                     <div class="device">
-                        <img src="screenshots/club.jpg" width="470" height="1024" loading="lazy" alt="The Musée Club page in Colta with posts, a poll and 82 members">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Friends & feed -->
-        <section class="row" id="friends">
-            <div class="container row-grid">
-                <div class="row-copy">
-                    <span class="eyebrow"><span class="en-only">Friends &amp; feed</span><span class="fr-only">Amis &amp; fil</span></span>
-                    <h2 class="section-title en-only">Follow friends.</h2>
-                    <h2 class="section-title fr-only">Suivez vos amis.</h2>
-                    <p class="lead en-only">See what your friends are reading, watching and visiting in a calm, chronological feed &mdash; no algorithm. Like, comment, and build a profile that tells your cultural story.</p>
-                    <p class="lead fr-only">Découvrez ce que vos amis lisent, regardent et visitent dans un fil calme et chronologique &mdash; sans algorithme. Aimez, commentez, et construisez un profil qui raconte votre histoire culturelle.</p>
-                    <ul class="row-points">
-                        <li><span class="d"></span><span class="en-only">A chronological feed, public or private accounts</span><span class="fr-only">Un fil chronologique, comptes publics ou privés</span></li>
-                        <li><span class="d"></span><span class="en-only">Profiles with stats, likes and comments</span><span class="fr-only">Profils avec statistiques, likes et commentaires</span></li>
-                    </ul>
-                </div>
-                <div class="row-visual">
-                    <div class="device">
-                        <img src="screenshots/home-feed.jpg" width="470" height="1024" loading="lazy" alt="A chronological Colta feed of friends' cultural outings, with likes and comments">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Weekly streaks & medals -->
-        <section class="row reverse" id="rewards">
-            <div class="container row-grid">
-                <div class="row-copy">
-                    <span class="eyebrow"><span class="en-only">Streaks &amp; medals</span><span class="fr-only">Séries &amp; médailles</span></span>
-                    <h2 class="section-title en-only">Keep a weekly rhythm.</h2>
-                    <h2 class="section-title fr-only">Gardez un rythme hebdomadaire.</h2>
-                    <p class="lead en-only">Log at least once a week to grow your streak &mdash; a gentle nudge to keep culture in your life, without the daily pressure. Hit milestones and collect medals along the way.</p>
-                    <p class="lead fr-only">Enregistrez au moins une fois par semaine pour faire grandir votre série &mdash; un rappel tout en douceur, sans la pression quotidienne. Atteignez des paliers et collectionnez des médailles en chemin.</p>
-                    <ul class="row-points">
-                        <li><span class="d"></span><span class="en-only">A <b>weekly</b> streak, not a daily chore</span><span class="fr-only">Une série <b>hebdomadaire</b>, pas une corvée quotidienne</span></li>
-                        <li><span class="d"></span><span class="en-only">Medals for films, books, expos and more</span><span class="fr-only">Des médailles pour films, livres, expos et plus</span></li>
-                    </ul>
-                </div>
-                <div class="row-visual">
-                    <div class="device">
-                        <img src="screenshots/journal-medals.jpg" width="470" height="1024" loading="lazy" alt="The Colta journal showing 9 of 15 medals earned and total, yearly and monthly log stats">
+                        <img src="screenshots/home-feed.jpg" width="470" height="1024" loading="lazy" alt="A Colta feed of friends' logs">
                     </div>
                 </div>
             </div>
@@ -202,24 +155,26 @@
             <div class="container">
                 <div class="how-head">
                     <span class="eyebrow"><span class="en-only">How it works</span><span class="fr-only">Comment ça marche</span></span>
-                    <h2 class="section-title en-only">Three steps to a richer cultural life.</h2>
-                    <h2 class="section-title fr-only">Trois étapes vers une vie culturelle plus riche.</h2>
+                    <h2 class="section-title en-only">Three steps, and the journal is open.</h2>
+                    <h2 class="section-title fr-only">Trois étapes, et le carnet est ouvert.</h2>
+                    <p class="lead en-only">You can skip every step.</p>
+                    <p class="lead fr-only">Tu peux passer chaque étape.</p>
                 </div>
                 <div class="steps">
                     <div class="step">
                         <span class="n">01</span>
-                        <h3><span class="en-only">Log it</span><span class="fr-only">Enregistrez</span></h3>
-                        <p><span class="en-only">Pick a type, add a title, note, photos and place. Saved instantly.</span><span class="fr-only">Choisissez un type, ajoutez un titre, une note, des photos et un lieu. Sauvegardé aussitôt.</span></p>
+                        <h3><span class="en-only">Log the last one</span><span class="fr-only">Note le dernier</span></h3>
+                        <p><span class="en-only">The last film you saw. A title is enough.</span><span class="fr-only">Le dernier film que tu as vu. Un titre suffit.</span></p>
                     </div>
                     <div class="step">
                         <span class="n">02</span>
-                        <h3><span class="en-only">Share it</span><span class="fr-only">Partagez</span></h3>
-                        <p><span class="en-only">It appears in your friends' feed, where they can like and comment.</span><span class="fr-only">Il apparaît dans le fil de vos amis, qui peuvent aimer et commenter.</span></p>
+                        <h3><span class="en-only">Add the next one</span><span class="fr-only">Ajoute le prochain</span></h3>
+                        <p><span class="en-only">The one you want to see. It goes on your list.</span><span class="fr-only">Celui que tu as envie de voir. Il part dans ta liste.</span></p>
                     </div>
                     <div class="step">
                         <span class="n">03</span>
-                        <h3><span class="en-only">Do it together</span><span class="fr-only">Vivez-le ensemble</span></h3>
-                        <p><span class="en-only">Join a club, plan outings and keep a shared journal as a group.</span><span class="fr-only">Rejoignez un club, organisez des sorties et tenez un journal commun.</span></p>
+                        <h3><span class="en-only">Find your friends</span><span class="fr-only">Retrouve tes amis</span></h3>
+                        <p><span class="en-only">Add your number and look through your contacts.</span><span class="fr-only">Tu ajoutes ton numéro et tu cherches dans tes contacts.</span></p>
                     </div>
                 </div>
             </div>
@@ -229,9 +184,9 @@
         <section class="cta">
             <div class="container">
                 <img class="mark" src="logo.png" alt="Colta">
-                <h2 class="en-only">Start your cultural journal.</h2>
-                <h2 class="fr-only">Commencez votre journal culturel.</h2>
-                <p><span class="en-only">Never forget the things that move you.</span><span class="fr-only">N'oubliez plus jamais ce qui vous touche.</span></p>
+                <h2 class="en-only">Open your journal.</h2>
+                <h2 class="fr-only">Ouvre ton carnet.</h2>
+                <p><span class="en-only">The last thing you saw is enough to start.</span><span class="fr-only">Le dernier truc que tu as vu suffit pour commencer.</span></p>
                 <div class="store-badges">
                     <a href="https://apps.apple.com/fr/app/colta/id6759000296?l=en-GB" class="app-store-badge" aria-label="Download on the App Store">
                         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
