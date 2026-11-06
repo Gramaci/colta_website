@@ -278,7 +278,8 @@ nav.nav-over .lang-toggle button.active { background: #FFFFFF; color: #17150F; }
 .billboard-scrim {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 20%, rgba(0, 0, 0, 0.72) 100%);
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.08) 28%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.88) 100%);
 }
 
 .billboard-copy {
@@ -296,6 +297,8 @@ nav.nav-over .lang-toggle button.active { background: #FFFFFF; color: #17150F; }
     letter-spacing: 1.6px;
     text-transform: uppercase;
     margin-bottom: 14px;
+    color: #FFFFFF;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
 }
 
 .billboard h1 {
@@ -304,7 +307,8 @@ nav.nav-over .lang-toggle button.active { background: #FFFFFF; color: #17150F; }
     line-height: 1.02;
     letter-spacing: -2.4px;
     margin-bottom: 28px;
-    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+    color: #FFFFFF;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
 }
 
 .billboard .hero-note { color: rgba(255, 255, 255, 0.7); }
