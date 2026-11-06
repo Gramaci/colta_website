@@ -345,6 +345,60 @@ body.home footer .copyright {
     nav.nav-over .nav-plain { display: none; }
 }
 
+/* ---- 404 ---- */
+
+body.not-found {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+}
+
+.not-found-lang {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.not-found-card {
+    text-align: center;
+}
+
+.not-found-mark {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    margin: 0 auto 20px;
+}
+
+.not-found-card h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    margin-bottom: 8px;
+}
+
+.not-found-card p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.not-found-card .store-badges {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.not-found-home {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.not-found-home:hover { color: var(--text-primary); }
+
 /* ---- Buttons ---- */
 
 .btn {
