@@ -4,45 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colta. Ton carnet culturel</title>
-    <meta name="description" content="Colta, c'est ton carnet culturel. Films, séries, livres, expos, concerts et théâtre. Ta liste, tes objectifs, et tes amis.">
-    <meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="Tout ce que tu as vu. Tout ce que tu veux voir. Films, séries, livres, expos, concerts et théâtre.">
+    <meta name="theme-color" content="#17150F">
 
-    <!-- Google Fonts: Inter (Colta 3.0 UI typeface) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
     <link rel="stylesheet" href="style.css">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Colta. Ton carnet culturel">
-    <meta property="og:description" content="Films, séries, livres, expos, concerts et théâtre. Ta liste, tes objectifs, et tes amis.">
+    <meta property="og:description" content="Tout ce que tu as vu. Tout ce que tu veux voir.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://getcolta.com">
-    <meta property="og:image" content="https://getcolta.com/logo.png">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://getcolta.com/logo.png">
+    <meta property="og:image" content="https://getcolta.com/posters/cinema.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://getcolta.com/posters/cinema.jpg">
 </head>
-<body>
+<body class="home">
 
-    <!-- Navigation -->
-    <nav>
+    <nav class="nav-over">
         <div class="nav-inner">
             <a href="/" class="logo">
                 <img src="logo.png" alt="Colta">
                 <span class="wordmark">Colta</span>
             </a>
-            <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
-            <ul class="nav-links">
-                <li><a href="#log"><span class="en-only">Log</span><span class="fr-only">Carnet</span></a></li>
-                <li><a href="#liste"><span class="en-only">List</span><span class="fr-only">Liste</span></a></li>
-                <li><a href="#amis"><span class="en-only">Friends</span><span class="fr-only">Amis</span></a></li>
-                <li><a href="support.html">Support</a></li>
-            </ul>
+            <a href="support.html" class="nav-plain"><span class="en-only">Support</span><span class="fr-only">Support</span></a>
             <div class="lang-toggle">
                 <button id="lang-en">EN</button>
                 <button id="lang-fr">FR</button>
@@ -50,156 +39,51 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="hero">
-        <div class="container hero-grid">
-            <div class="hero-copy">
-                <span class="eyebrow"><span class="en-only">Your cultural journal</span><span class="fr-only">Ton carnet culturel</span></span>
-                <h1 class="en-only">What you've seen, and what you want to see.</h1>
-                <h1 class="fr-only">Ce que tu as vu. Ce que tu as envie de voir.</h1>
-                <p class="lead en-only">Films, series, books, exhibitions, concerts and plays. Log one in a few seconds, keep a list, set a goal, and find your friends.</p>
-                <p class="lead fr-only">Films, séries, livres, expos, concerts et théâtre. Tu notes en quelques secondes, tu gardes une liste, tu te fixes un objectif, et tu retrouves tes amis.</p>
-                <div class="hero-actions">
-                    <div class="store-badges">
-                        <a href="https://apps.apple.com/fr/app/colta/id6759000296?l=en-GB" class="app-store-badge" aria-label="Download on the App Store">
-                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-                        </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.colta.app" class="play-store-badge" aria-label="Get it on Google Play">
-                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
-                        </a>
-                    </div>
-                    <p class="hero-note"><span class="en-only">Free on iPhone &middot; Android</span><span class="fr-only">Gratuit sur iPhone &middot; Android</span></p>
-                </div>
+    <header class="billboard">
+        <img class="billboard-photo" src="posters/cinema.jpg" alt="">
+        <div class="billboard-scrim"></div>
+        <div class="billboard-copy">
+            <p class="billboard-kicker en-only">Your cultural journal</p>
+            <p class="billboard-kicker fr-only">Ton carnet culturel</p>
+            <h1 class="en-only">Everything you've seen.<br>Everything you want to see.</h1>
+            <h1 class="fr-only">Tout ce que tu as vu.<br>Tout ce que tu veux voir.</h1>
+            <div class="store-badges">
+                <a href="https://apps.apple.com/fr/app/colta/id6759000296?l=en-GB" class="app-store-badge" aria-label="Download on the App Store">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.colta.app" class="play-store-badge" aria-label="Get it on Google Play">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                </a>
             </div>
-
-            <div class="hero-visual">
-                <div class="device">
-                    <img src="screenshots/home-feed.jpg" width="470" height="1024" fetchpriority="high" alt="Colta home feed showing a logged exhibition, with filters for Cinéma, Théâtre and Exposition">
-                </div>
-            </div>
+            <p class="hero-note"><span class="en-only">Free on iPhone and Android</span><span class="fr-only">Gratuit sur iPhone et Android</span></p>
         </div>
     </header>
 
     <main>
-        <!-- Log -->
-        <section class="row reverse" id="log">
-            <div class="container row-grid">
-                <div class="row-copy">
-                    <span class="eyebrow"><span class="en-only">The log</span><span class="fr-only">Le log</span></span>
-                    <h2 class="section-title en-only">A title, some badges, a note.</h2>
-                    <h2 class="section-title fr-only">Un titre, des badges, un avis.</h2>
-                    <p class="lead en-only">Pick a type, search the title, add a badge and a note if you want. For an exhibition, a play or a concert, you can add photos. Date and place are the moment you log. Change them later by editing.</p>
-                    <p class="lead fr-only">Tu choisis le type, tu cherches le titre, tu ajoutes un badge et un avis si tu veux. Pour une expo, un théâtre ou un concert, tu peux ajouter des photos. La date et le lieu sont ceux du moment. Tu les changes en modifiant le log.</p>
-                    <ul class="row-points">
-                        <li><span class="d" style="background: var(--color-movie)"></span><span class="en-only"><b>Films</b>, <b>series</b> and <b>books</b></span><span class="fr-only"><b>Films</b>, <b>séries</b> et <b>livres</b></span></li>
-                        <li><span class="d" style="background: var(--color-series)"></span><span class="en-only"><b>Plays</b>, <b>exhibitions</b> and <b>concerts</b></span><span class="fr-only"><b>Théâtre</b>, <b>expos</b> et <b>concerts</b></span></li>
-                        <li><span class="d" style="background: var(--color-exhibition)"></span><span class="en-only">Badges and a note, only if you want them</span><span class="fr-only">Badges et avis, seulement si tu veux</span></li>
-                    </ul>
+        <section class="pitch">
+            <div class="container pitch-grid">
+                <div>
+                    <h2 class="en-only">Keep a record.</h2>
+                    <h2 class="fr-only">Tu gardes une trace.</h2>
+                    <p class="en-only">A film, a series, a book, a show, a concert, a play. A title is enough.</p>
+                    <p class="fr-only">Un film, une série, un livre, une expo, un concert ou une pièce. Un titre suffit.</p>
                 </div>
-                <div class="row-visual">
-                    <div class="device">
-                        <img src="screenshots/profile.jpg" width="470" height="1024" loading="lazy" alt="A Colta profile with recent cultural logs">
-                    </div>
+                <div>
+                    <h2 class="en-only">Know what's next.</h2>
+                    <h2 class="fr-only">Tu sais quoi voir ensuite.</h2>
+                    <p class="en-only">Everything on your list, in one place. No more keeping it in Notes.</p>
+                    <p class="fr-only">Toutes tes envies au même endroit. Plus besoin de les garder dans Notes.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- List, goals, stats -->
-        <section class="row" id="liste">
-            <div class="container row-grid">
-                <div class="row-copy">
-                    <span class="eyebrow"><span class="en-only">Home</span><span class="fr-only">L'accueil</span></span>
-                    <h2 class="section-title en-only">Your list, your goals, your numbers.</h2>
-                    <h2 class="section-title fr-only">Ta liste, tes objectifs, tes chiffres.</h2>
-                    <p class="lead en-only">Home starts with what you want to see, then the goals you set, then your stats. A film from this year, a series you finished, a book still waiting.</p>
-                    <p class="lead fr-only">L'accueil commence par ce que tu as envie de voir, puis les objectifs que tu te fixes, puis tes stats. Un film de l'année, une série finie, un livre qui attend.</p>
-                    <ul class="row-points">
-                        <li><span class="d"></span><span class="en-only">A list, so it doesn't live in Notes anymore</span><span class="fr-only">Une liste, pour ne plus la tenir dans Notes</span></li>
-                        <li><span class="d"></span><span class="en-only">As many goals as you want</span><span class="fr-only">Autant d'objectifs que tu veux</span></li>
-                        <li><span class="d"></span><span class="en-only">Stats by type, over time</span><span class="fr-only">Des stats par type, dans le temps</span></li>
-                    </ul>
-                </div>
-                <div class="row-visual">
-                    <div class="device">
-                        <img src="screenshots/home-feed.jpg" width="470" height="1024" loading="lazy" alt="The Colta home screen">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Friends -->
-        <section class="row reverse" id="amis">
-            <div class="container row-grid">
-                <div class="row-copy">
-                    <span class="eyebrow"><span class="en-only">Friends</span><span class="fr-only">Amis</span></span>
-                    <h2 class="section-title en-only">Find the people you already know.</h2>
-                    <h2 class="section-title fr-only">Retrouve les gens que tu connais.</h2>
-                    <p class="lead en-only">Add your number, look through your contacts, and invite the ones who aren't here yet. The friends feed shows their logs. Your number is encrypted.</p>
-                    <p class="lead fr-only">Tu ajoutes ton numéro, tu cherches dans tes contacts, et tu invites ceux qui ne sont pas encore là. Le fil Amis montre leurs logs. Ton numéro est crypté.</p>
-                    <ul class="row-points">
-                        <li><span class="d"></span><span class="en-only">Your number stays encrypted</span><span class="fr-only">Ton numéro reste crypté</span></li>
-                        <li><span class="d"></span><span class="en-only">Search your contacts, or invite someone</span><span class="fr-only">Tu cherches dans tes contacts, ou tu invites quelqu'un</span></li>
-                        <li><span class="d"></span><span class="en-only">A feed with no algorithm</span><span class="fr-only">Un fil sans algorithme</span></li>
-                    </ul>
-                </div>
-                <div class="row-visual">
-                    <div class="device">
-                        <img src="screenshots/home-feed.jpg" width="470" height="1024" loading="lazy" alt="A Colta feed of friends' logs">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How it works -->
-        <section class="how">
-            <div class="container">
-                <div class="how-head">
-                    <span class="eyebrow"><span class="en-only">How it works</span><span class="fr-only">Comment ça marche</span></span>
-                    <h2 class="section-title en-only">Three steps, and the journal is open.</h2>
-                    <h2 class="section-title fr-only">Trois étapes, et le carnet est ouvert.</h2>
-                    <p class="lead en-only">You can skip every step.</p>
-                    <p class="lead fr-only">Tu peux passer chaque étape.</p>
-                </div>
-                <div class="steps">
-                    <div class="step">
-                        <span class="n">01</span>
-                        <h3><span class="en-only">Log the last one</span><span class="fr-only">Note le dernier</span></h3>
-                        <p><span class="en-only">The last film you saw. A title is enough.</span><span class="fr-only">Le dernier film que tu as vu. Un titre suffit.</span></p>
-                    </div>
-                    <div class="step">
-                        <span class="n">02</span>
-                        <h3><span class="en-only">Add the next one</span><span class="fr-only">Ajoute le prochain</span></h3>
-                        <p><span class="en-only">The one you want to see. It goes on your list.</span><span class="fr-only">Celui que tu as envie de voir. Il part dans ta liste.</span></p>
-                    </div>
-                    <div class="step">
-                        <span class="n">03</span>
-                        <h3><span class="en-only">Find your friends</span><span class="fr-only">Retrouve tes amis</span></h3>
-                        <p><span class="en-only">Add your number and look through your contacts.</span><span class="fr-only">Tu ajoutes ton numéro et tu cherches dans tes contacts.</span></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta">
-            <div class="container">
-                <img class="mark" src="logo.png" alt="Colta">
-                <h2 class="en-only">Open your journal.</h2>
-                <h2 class="fr-only">Ouvre ton carnet.</h2>
-                <p><span class="en-only">The last thing you saw is enough to start.</span><span class="fr-only">Le dernier truc que tu as vu suffit pour commencer.</span></p>
-                <div class="store-badges">
-                    <a href="https://apps.apple.com/fr/app/colta/id6759000296?l=en-GB" class="app-store-badge" aria-label="Download on the App Store">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.colta.app" class="play-store-badge" aria-label="Get it on Google Play">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
-                    </a>
+                <div>
+                    <h2 class="en-only">See what your friends loved.</h2>
+                    <h2 class="fr-only">Tu vois ce que tes amis ont aimé.</h2>
+                    <p class="en-only">Their outings and their takes. No algorithm. Your number is encrypted.</p>
+                    <p class="fr-only">Leurs sorties et leurs avis. Sans algorithme. Ton numéro est crypté.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-inner">
             <a href="/" class="foot-brand">

@@ -227,6 +227,118 @@ nav .nav-links a {
 nav .nav-links a:hover,
 nav .nav-links a.active { color: var(--text-primary); }
 
+nav .nav-plain {
+    margin-left: auto;
+    margin-right: var(--space-md);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+nav.nav-over {
+    background: transparent;
+    border-bottom: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+nav.nav-over .nav-inner { justify-content: flex-start; }
+nav.nav-over .lang-toggle { margin-left: auto; }
+
+nav.nav-over .logo,
+nav.nav-over .wordmark,
+nav.nav-over .nav-plain { color: #FFFFFF; }
+
+nav.nav-over .lang-toggle {
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
+nav.nav-over .lang-toggle button { color: rgba(255, 255, 255, 0.72); }
+nav.nav-over .lang-toggle button.active { background: #FFFFFF; color: #17150F; }
+
+/* ---- Billboard hero (photo + one line) ---- */
+
+.billboard {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    color: #FFFFFF;
+}
+
+.billboard-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.billboard-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 20%, rgba(0, 0, 0, 0.72) 100%);
+}
+
+.billboard-copy {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--space-lg) 56px;
+}
+
+.billboard-kicker {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.billboard h1 {
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -2.4px;
+    margin-bottom: 28px;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+.billboard .hero-note { color: rgba(255, 255, 255, 0.7); }
+
+.pitch {
+    padding: clamp(56px, 8vw, 96px) 0;
+}
+
+.pitch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(28px, 5vw, 56px);
+}
+
+.pitch h2 {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.pitch p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    max-width: 280px;
+}
+
+@media (max-width: 720px) {
+    .pitch-grid { grid-template-columns: 1fr; gap: 32px; }
+    .pitch p { max-width: none; }
+    nav.nav-over .nav-plain { display: none; }
+}
+
 /* ---- Buttons ---- */
 
 .btn {

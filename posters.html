@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiches store. Colta</title>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, sans-serif;
+            background: #111;
+            color: #fff;
+        }
+        .hint {
+            padding: 18px 20px 8px;
+            font-size: 13px;
+            color: #bbb;
+            max-width: 420px;
+        }
+        .hint a { color: #E0613C; }
+        .stage {
+            display: flex;
+            gap: 24px;
+            padding: 16px 20px 80px;
+            overflow-x: auto;
+        }
+        .poster {
+            position: relative;
+            flex: 0 0 auto;
+            width: 390px;
+            height: 844px;
+            border-radius: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        .poster img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .poster .scrim {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.12) 30%, rgba(0,0,0,0.72) 100%);
+        }
+        .poster .copy {
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            bottom: 48px;
+        }
+        .poster h2 {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -1.6px;
+            line-height: 1.02;
+            text-shadow: 0 2px 18px rgba(0,0,0,0.45);
+        }
+        .poster p {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 500;
+            opacity: 0.92;
+        }
+        .poster .mark {
+            margin-top: 22px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+        @media (min-width: 900px) {
+            .poster { width: 430px; height: 932px; }
+            .poster h2 { font-size: 46px; }
+        }
+    </style>
+</head>
+<body>
+    <p class="hint">Capture chaque affiche en plein écran pour l’App Store (iPhone 6.7). Les 3 premières d’abord, puis 2 vraies captures de l’app.</p>
+    <div class="stage">
+        <article class="poster">
+            <img src="posters/cinema.jpg" alt="">
+            <div class="scrim"></div>
+            <div class="copy">
+                <h2>Tout ce que tu as vu.<br>Tout ce que tu veux voir.</h2>
+                <p class="mark">Colta</p>
+            </div>
+        </article>
+        <article class="poster">
+            <img src="posters/book.jpg" alt="">
+            <div class="scrim"></div>
+            <div class="copy">
+                <h2>Films, séries, livres.</h2>
+                <p>Garde tout en mémoire.</p>
+                <p class="mark">Colta</p>
+            </div>
+        </article>
+        <article class="poster">
+            <img src="posters/concert.jpg" alt="">
+            <div class="scrim"></div>
+            <div class="copy">
+                <h2>Toutes tes envies au même endroit.</h2>
+                <p class="mark">Colta</p>
+            </div>
+        </article>
+        <article class="poster">
+            <img src="posters/expo.jpg" alt="">
+            <div class="scrim"></div>
+            <div class="copy">
+                <h2>Les avis de tes amis.</h2>
+                <p>Pas ceux d’un algorithme.</p>
+                <p class="mark">Colta</p>
+            </div>
+        </article>
+        <article class="poster">
+            <img src="posters/night.jpg" alt="">
+            <div class="scrim"></div>
+            <div class="copy">
+                <h2>Ton carnet culturel.</h2>
+                <p>Rien de plus compliqué.</p>
+                <p class="mark">Colta</p>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
